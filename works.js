@@ -106,6 +106,7 @@ const WORKS = [
   // ===== アプリ・ツール =====
   {
     id: 'lightsout', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'ゲームアプリ / パズル「ライツアウト」',
     desc: 'Claude Codeで作成したゲームアプリです。スマートフォンでも遊べます。',
     link: { url: 'https://ishi061-svg.github.io/lights-out/', label: '遊んでみる' },
@@ -121,6 +122,7 @@ const WORKS = [
   },
   {
     id: 'kaimono-memo', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'アプリ / 買い物メモ',
     desc: 'Claude Codeで作成したアプリです。スマートフォンでも使用できます。',
     link: { url: 'https://ishi061-svg.github.io/shopping-memo/', label: '使ってみる' },
@@ -128,6 +130,7 @@ const WORKS = [
   },
   {
     id: 'gamelib', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'アプリ / ゲームライブラリ',
     desc: 'Claude Codeで作成した、持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
     link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
@@ -135,6 +138,7 @@ const WORKS = [
   },
   {
     id: 'telop-tool', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'テロップ作成ツール',
     desc: 'Premiereで動画編集の作業効率向上のために作成しました。動画に重ねるテロップを作って、背景が透明なPNGで保存できます。',
     link: { url: 'https://ishi061-svg.github.io/telop-maker/', label: '使ってみる' },

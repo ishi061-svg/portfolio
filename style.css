@@ -8,7 +8,7 @@
   --surface: #ffffff;     /* 白い面 */
   --text: #1c1c1e;        /* 文字 */
   --sub: #6b6b70;         /* 薄い文字 */
-  --accent: #1c1c1e;      /* 強調（選んだタブ・ボタン） */
+  --accent: #3e4f6a;      /* 強調（選んだタブ・ボタン）：ヘッダーと同じネイビー */
   --accent-text: #ffffff; /* 強調の上の文字 */
   --line: #e6e4de;        /* 区切り線 */
   --thumb-bg: #efeee9;    /* 画像の余白 */
@@ -297,7 +297,7 @@ footer { text-align: center; color: var(--sub); font-size: .85rem; padding: 0 16
 .info dd { margin: 0; }
 .cta {
   display: inline-block;
-  background: var(--accent); color: var(--accent-text);
+  background: var(--surface); color: var(--text); /* タブ（未選択）と同じ、白地＋黒枠 */
   padding: 12px 28px;
   text-decoration: none;
 }
