@@ -1,0 +1,314 @@
+/* =========================================================
+   石 博斗 ポートフォリオ
+   色：白基調のシンプル ／ ボタン：太い線とずらした影
+   色や角の丸みは「変数」にまとめてあります。ここを変えると全体が変わります
+   ========================================================= */
+:root {
+  --bg: #fafaf7;          /* 背景 */
+  --surface: #ffffff;     /* 白い面 */
+  --text: #1c1c1e;        /* 文字 */
+  --sub: #6b6b70;         /* 薄い文字 */
+  --accent: #1c1c1e;      /* 強調（選んだタブ・ボタン） */
+  --accent-text: #ffffff; /* 強調の上の文字 */
+  --line: #e6e4de;        /* 区切り線 */
+  --thumb-bg: #efeee9;    /* 画像の余白 */
+  --radius: 4px;
+  --btn-line: 2px solid #1c1c1e;
+  --btn-shadow: 3px 3px 0 #1c1c1e;
+  --btn-shadow-hover: 5px 5px 0 #1c1c1e;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", "Meiryo", sans-serif;
+  line-height: 1.75;
+}
+a { color: inherit; }
+img { max-width: 100%; }
+
+/* ---------- ヘッダー ---------- */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 16px 32px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: .8rem;
+  letter-spacing: .3em;
+  color: #a19f97;
+}
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.2;
+  letter-spacing: .06em;
+}
+.hero h1 a { text-decoration: none; }
+.role { margin: 12px 0 0; font-size: 1.1rem; font-weight: bold; }
+.tags { margin: 4px 0 0; color: var(--sub); font-size: .9rem; }
+
+/* ヘッダー（名前まわり）だけ、丸ゴシックとティール×オレンジにする */
+.hero {
+  --hero-teal: #3e4f6a; /* 上部の帯の色：ネイビー（落ち着いた紺） */
+  --hero-orange: #e8592b;
+  --hero-text: #3a3a3a;
+}
+/* ページ上部を横幅いっぱいの緑の帯にする（下の真ん中に小さな三角の吹き出し） */
+.hero {
+  position: relative;
+  max-width: none;
+  margin: 0 0 14px;             /* 三角の分のすき間 */
+  padding: 56px 16px 40px;
+  background: var(--hero-teal);
+  color: #fff;
+  text-align: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -13px;
+  transform: translateX(-50%);
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 14px solid var(--hero-teal);
+}
+.hero .eyebrow {
+  color: rgba(255,255,255,.85);
+  font-weight: 800;
+  letter-spacing: .3em;
+}
+.hero h1 {
+  font-weight: 900;
+  letter-spacing: .1em;
+  color: #fff;
+}
+/* 読みやすさ：小さい文字ほど細く・少し大きく・字間を空ける */
+.hero .role { color: #fff; font-weight: 700; font-size: 1.25rem; letter-spacing: .06em; margin-top: 16px; }
+.hero .tags { color: rgba(255,255,255,.9); font-weight: 500; font-size: 1rem; letter-spacing: .04em; margin-top: 6px; }
+.hero .sep { color: #f2b77a; margin: 0 .55em; font-weight: 700; }
+
+/* ---------- ボタン（タブ・作品ページのボタン） ---------- */
+.tab,
+.cta {
+  font: inherit;
+  font-weight: bold;
+  border: var(--btn-line);
+  border-radius: 999px;
+  box-shadow: var(--btn-shadow);
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, background .15s, color .15s;
+}
+.tab:hover,
+.cta:hover { transform: translate(-2px, -2px); box-shadow: var(--btn-shadow-hover); }
+.tab:active,
+.cta:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #1c1c1e; }
+.tab:focus-visible,
+.cta:focus-visible { outline: 3px solid #7aa7ff; outline-offset: 3px; }
+
+/* ---------- タブ ---------- */
+.tabs {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg);
+  display: flex; flex-wrap: wrap; gap: 10px;
+  max-width: 1100px; margin: 0 auto;
+  padding: 12px 16px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.tab {
+  background: var(--surface);
+  color: var(--text);
+  padding: 6px 18px;
+}
+.tab.active { background: var(--accent); color: var(--accent-text); }
+
+/* ---------- 作品一覧 ---------- */
+main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.card {
+  display: flex; flex-direction: column;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform .2s;
+}
+.card.hidden { display: none; }
+.card:hover { transform: translateY(-4px); }
+.card:focus-visible { outline: 3px solid #7aa7ff; outline-offset: 3px; }
+.thumb {
+  aspect-ratio: 16 / 9;
+  background: var(--thumb-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* 白っぽい画像でも背景に埋もれないよう、細い枠線とうっすら影 */
+  box-shadow: 0 0 0 1px #cfccc4, 0 4px 14px rgba(0, 0, 0, .14);
+}
+.thumb img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+  transition: transform .4s;
+}
+.card:hover .thumb img { transform: scale(1.04); }
+/* 画像の右下の小さい印（▶ 動画 ／ デザイン 3点） */
+.thumb { position: relative; }
+.media-tag {
+  position: absolute; right: 8px; bottom: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(28,28,30,.85); color: #fff;
+  font-size: .75rem; font-weight: 700; letter-spacing: .05em;
+}
+.media-tag.design { background: #fff; color: #1c1c1e; border: 2px solid #1c1c1e; }
+.body { padding: 12px 2px 8px; display: flex; flex-direction: column; flex: 1; }
+.label {
+  align-self: flex-start;
+  font-size: .72rem;
+  color: var(--sub);
+  letter-spacing: .1em;
+}
+.body h3 { margin: 4px 0 4px; font-size: 1.02rem; line-height: 1.5; }
+.body p {
+  margin: 0; color: var(--sub); font-size: .88rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+/* カードにマウスを乗せると、タイトルに下線（押せることが分かるように） */
+.card:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+/* ---------- まず見てほしい作品（横幅いっぱいの大きいカード） ---------- */
+.card.featured {
+  grid-column: 1 / -1;              /* 横の列をぜんぶ使う */
+  display: grid;
+  grid-template-columns: 3fr 2fr;   /* 左に大きい画像、右に文字 */
+  gap: 28px;
+  align-items: center;
+  padding: 20px;
+  background: var(--surface);
+  border: var(--btn-line);
+  box-shadow: var(--btn-shadow);
+}
+.card.featured:hover { transform: translate(-2px, -2px); box-shadow: var(--btn-shadow-hover); }
+.card.featured .body { padding: 0; }
+.card.featured h3 { font-size: 1.4rem; margin: 10px 0 8px; }
+.card.featured p { font-size: .95rem; -webkit-line-clamp: 4; }
+.badge {
+  align-self: flex-start;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: #3e4f6a; color: #fff;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+}
+@media (max-width: 720px) {
+  .card.featured { grid-template-columns: 1fr; gap: 14px; padding: 14px; }
+}
+
+/* ---------- ジャンルごとの仕切り ---------- */
+.section { margin-bottom: 56px; }
+.section.hidden { display: none; }
+.section-head {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 0 20px;
+  font-size: 1.35rem; font-weight: 900; letter-spacing: .06em;
+}
+.section-head::before {            /* 見出しの左の紺色の棒 */
+  content: "";
+  width: 6px; height: 1.2em;
+  background: #3e4f6a;
+  border-radius: 3px;
+}
+.section-head::after {             /* 見出しの右に伸びる仕切り線 */
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-tools {                   /* 見出しの下の「使用ソフト」 */
+  margin: -8px 0 20px;
+  font-size: .9rem; font-weight: 500; color: var(--sub);
+}
+.section-tools span {
+  display: inline-block;
+  margin-right: 10px; padding: 1px 10px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface);
+  font-size: .75rem; font-weight: 700; color: var(--text);
+}
+.section-head .count {
+  order: 2;
+  font-size: .8rem; font-weight: 500; color: var(--sub); letter-spacing: 0;
+}
+
+footer { text-align: center; color: var(--sub); font-size: .85rem; padding: 0 16px 32px; }
+
+/* ---------- 作品ページ ---------- */
+.mini-header {
+  max-width: 1000px; margin: 0 auto;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.mini-header a { font-weight: bold; text-decoration: none; letter-spacing: .06em; }
+.work { max-width: 1000px; margin: 0 auto; }
+.work-page main { max-width: 1000px; }
+.back { display: inline-block; margin-bottom: 20px; color: var(--sub); text-decoration: none; font-size: .9rem; }
+.back:hover { color: var(--text); }
+.work-head .label { display: inline-block; }
+.work-head h1 { margin: 4px 0 20px; font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.4; }
+.hero-img {
+  margin: 0;
+  background: var(--thumb-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.hero-img img { display: block; width: 100%; max-height: 75vh; object-fit: contain; margin: 0 auto; }
+/* 作品ページの動画（横長16:9の枠いっぱいに表示） */
+.video {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 16px;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-link { margin: 0 0 20px; }
+.gallery { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.gallery button {
+  padding: 0; width: 120px; aspect-ratio: 16 / 9;
+  border: 2px solid transparent; border-radius: 6px;
+  background: var(--thumb-bg); cursor: pointer; overflow: hidden; opacity: .6;
+  transition: opacity .15s;
+}
+.gallery button img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.gallery button:hover { opacity: 1; }
+.gallery button.on { opacity: 1; border-color: #1c1c1e; }
+.info {
+  display: grid; grid-template-columns: 7em 1fr; gap: 10px 16px;
+  margin: 28px 0; padding: 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.info dt { color: var(--sub); font-size: .9rem; }
+.info dd { margin: 0; }
+.cta {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-text);
+  padding: 12px 28px;
+  text-decoration: none;
+}
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+.pager a { text-decoration: none; font-weight: bold; font-size: .95rem; }
+.pager a small { display: block; color: var(--sub); font-weight: normal; font-size: .8rem; }
+.pager .next { text-align: right; }
+
+@media (max-width: 560px) {
+  .info { grid-template-columns: 1fr; gap: 2px; }
+  .info dd { margin-bottom: 10px; }
+  .gallery button { width: calc(33.3% - 7px); }
+  .hero { padding-top: 48px; }
+}
