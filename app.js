@@ -91,6 +91,7 @@ function renderWork() {
       `<button class="${k === 0 ? 'on' : ''}" data-src="${IMG_BASE + src}"><img src="${IMG_BASE + src}" alt=""></button>`).join('')}</div>` : ''}
     <dl class="info">
       <dt>説明</dt><dd>${w.desc}</dd>
+      ${w.points ? `<dt>工夫したところ</dt><dd><ul class="points">${w.points.map(p => `<li>${p}</li>`).join('')}</ul></dd>` : ''}
       <dt>使ったソフト</dt><dd>${w.tools || CAT_TOOLS[w.cat]}</dd>
       <dt>ジャンル</dt><dd>${CATEGORIES[w.cat]}</dd>
     </dl>
