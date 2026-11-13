@@ -126,6 +126,12 @@ img { max-width: 100%; }
   padding: 6px 18px;
 }
 .tab.active { background: var(--accent); color: var(--accent-text); }
+/* スマホ幅：タブを少し小さくして1列に収める（入りきらない幅では横にスクロール） */
+@media (max-width: 480px) {
+  .tabs { flex-wrap: nowrap; gap: 6px; padding: 10px 12px 12px; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; padding: 5px 12px; font-size: .88rem; white-space: nowrap; }
+}
 
 /* ---------- 作品一覧 ---------- */
 main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
