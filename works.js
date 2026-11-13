@@ -131,7 +131,7 @@ const WORKS = [
   {
     id: 'gamelib', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
-    title: 'アプリ / ゲームライブラリ',
+    title: 'Webページ / ゲームライブラリ',
     desc: 'Claude Codeで作成した、持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
     link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
     images: ['app/gamelib.png'],
