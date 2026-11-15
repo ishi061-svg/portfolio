@@ -184,7 +184,7 @@ const WORKS = [
   {
     id: 'audio-track-adder', cat: 'app',
     tools: 'Claude Code / Python・tkinter・ffmpeg',
-    title: 'ツール / 音声トラック追加アプリ',
+    title: '音声トラック追加ツール',
     desc: '動画編集で使うために作った、MP4 に MP3 を別の音声トラックとして追加するアプリです。もとの音はトラック1に残し、MP3 をトラック2〜5に入れます。',
     points: [
       '映像はコピーするだけなので、画質が落ちず速い',
