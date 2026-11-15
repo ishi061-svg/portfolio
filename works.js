@@ -185,7 +185,7 @@ const WORKS = [
     id: 'audio-track-adder', cat: 'app',
     tools: 'Claude Code / Python・tkinter・ffmpeg',
     title: '音声トラック追加ツール',
-    desc: '動画編集で使うために作った、MP4 に MP3 を別の音声トラックとして追加するアプリです。もとの音はトラック1に残し、MP3 をトラック2〜5に入れます。',
+    desc: 'MP4 に MP3 を別の音声トラックとして追加するアプリです。もとの音はトラック1に残し、MP3 をトラック2〜5に入れます。',
     points: [
       '映像はコピーするだけなので、画質が落ちず速い',
       'MP3 を最大4つ、トラック2〜5に並べた順で追加',
@@ -196,6 +196,22 @@ const WORKS = [
     ],
     link: { url: 'https://github.com/ishi061-svg/audio-track-adder', label: 'GitHubで見る' },
     images: ['app/audio-track-adder.png'],
+  },
+  {
+    id: 'premiere-folder-template', cat: 'app',
+    tools: 'Claude Code / Python・tkinter',
+    title: 'Premiere フォルダテンプレート',
+    desc: '動画編集を始めるときのフォルダを、ボタン1つでまとめて作るツールです。作品名と日付を入れると「作品名_2026-11-15」のフォルダができ、Premiere に入れるとそのままの形でビンになります。',
+    points: [
+      '素材・音声・画像・書き出しなど22個のフォルダを、ボタン1つで作成',
+      'いらないフォルダはチェックで OFF。親を外すと中も作らない',
+      'フォルダの形はメモ帳で書き換えられ、書き間違いは行番号で表示',
+      '前回の場所とチェックを覚えていて、日付は今日が自動で入る',
+      'Premiere に入れると、空のフォルダもそのままビンになることを確認',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/premiere-folder-template', label: 'GitHubで見る' },
+    images: ['app/premiere-folder-template.png'],
   },
   {
     id: 'premiere-plugins', cat: 'app',
