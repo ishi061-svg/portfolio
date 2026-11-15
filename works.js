@@ -177,6 +177,22 @@ const WORKS = [
     images: ['app/telop-tool-v2.png'], // 背景色・アプリ名入り（元の版は telop-tool.png）
   },
   {
+    id: 'audio-track-adder', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ffmpeg',
+    title: 'ツール / 音声トラック追加アプリ',
+    desc: '動画編集で使うために作った、MP4 に MP3 を別の音声トラックとして追加するアプリです。もとの音はトラック1に残し、MP3 をトラック2〜5に入れます。',
+    points: [
+      '映像はコピーするだけなので、画質が落ちず速い',
+      'MP3 を最大4つ、トラック2〜5に並べた順で追加',
+      'ドラッグ＆ドロップで入れられ、「上へ」「下へ」で並べ替え',
+      '合成中は、進み具合を棒と%で表示',
+      '壊れたファイルなど12通りを試し、理由を出して止まる作り',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/audio-track-adder', label: 'GitHubで見る' },
+    images: ['app/audio-track-adder.png'],
+  },
+  {
     id: 'premiere-plugins', cat: 'app',
     title: 'Premiereプラグイン',
     desc: 'エフェクトを一覧からワンボタンで適用するプラグイン（エフェクトパレット）と、無音部分だけカットするプラグイン（無音カットツール）です。',
