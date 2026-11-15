@@ -62,6 +62,7 @@ const WORKS = [
   },
   {
     id: 'shorts-daywork', cat: 'video',
+    tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / ショート動画',
     desc: 'バイトアプリPR。1日農業バイトアプリ「デイワーク」の縦型ショート動画です。',
     youtube: { list: 'PLSuonXJytkRo' },
@@ -69,6 +70,7 @@ const WORKS = [
   },
   {
     id: 'business-design', cat: 'video',
+    tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / ビジネス向けデザイン',
     desc: '動画の内容がひと目で伝わるよう意識した、ビジネス系YouTubeのサムネイルとテロップです。',
     images: ['video/thumb-owakon.png', 'video/telop-fukugyou-1.png', 'video/telop-fukugyou-2.png'],
@@ -83,6 +85,7 @@ const WORKS = [
   },
   {
     id: 'thumb-mosyu', cat: 'video',
+    tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / ゲーム実況',
     desc: 'ゲーム実況動画のサムネイル制作と編集を担当しました。',
     youtube: { id: 'aoorcTJ3Gl8' },
@@ -90,6 +93,7 @@ const WORKS = [
   },
   {
     id: 'thumb-game-pro', cat: 'video',
+    tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / ゲーム実況',
     desc: 'ゲーム実況動画のサムネイル制作と編集を担当しました。',
     youtube: { id: 'D3gQ0gbi-D8' },
@@ -97,6 +101,7 @@ const WORKS = [
   },
   {
     id: 'ai-katsuyou', cat: 'video',
+    tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / AI出力動画（Fable 5.2）',
     desc: 'AI（Fable 5.2）で出力した、動画編集者のAI活用を紹介する解説動画です。',
     youtube: { id: 'FYzqt8YA9g8' },
