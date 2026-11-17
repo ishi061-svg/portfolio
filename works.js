@@ -198,6 +198,22 @@ const WORKS = [
     images: ['app/audio-track-adder.png'],
   },
   {
+    id: 'se-head-trimmer', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ffmpeg',
+    title: 'SE頭無音カット',
+    desc: 'ダウンロードした SE（効果音）素材の、頭の無音だけを自動で切るアプリです。最後の無音は残し、フォルダごとまとめて処理できます。',
+    points: [
+      '無音の基準（dB）と、音の直前に残す余白を画面で調整',
+      '切る必要がないファイルは作り直さずスキップし、理由を表示',
+      '元のファイルは残し、「cut」フォルダに同じ名前で保存',
+      'WAV・MP3 など6形式に対応し、元と同じ音質で保存',
+      'ドラッグ＆ドロップでファイルもフォルダも入れられる',
+      '壊れたファイルなどをわざと入れて試し、理由を出して止まる作り',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/se-head-trimmer', label: 'GitHubで見る' },
+    images: ['app/se-head-trimmer.png'],
+  },
+  {
     id: 'premiere-folder-template', cat: 'app',
     tools: 'Claude Code / Python・tkinter',
     title: 'Premiere フォルダテンプレート',
