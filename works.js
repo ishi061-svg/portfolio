@@ -214,6 +214,22 @@ const WORKS = [
     images: ['app/se-head-trimmer.png'],
   },
   {
+    id: 'mp4-thumbnail-changer', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ffmpeg',
+    title: 'MP4サムネイル変更',
+    desc: 'エクスプローラーで見える MP4 のサムネイルを、好きな画像や、動画の中の好きな場面に変えるアプリです。何本かまとめて処理できます。',
+    points: [
+      '動画は作り直さずに表紙の絵だけを足すので、画質が落ちず一瞬で終わる',
+      'サムネイルは、画像ファイルか動画の好きな場面から、タブで選べる',
+      '場面はスライダーで見ながら、または時間を入れて選べる',
+      '元の動画を残すか上書きするかを毎回選べ、失敗しても元は壊れない',
+      'ドラッグ＆ドロップで動画・画像・フォルダを入れて、まとめて処理',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/mp4-thumbnail-changer', label: 'GitHubで見る' },
+    images: ['app/mp4-thumbnail-changer.png'],
+  },
+  {
     id: 'premiere-folder-template', cat: 'app',
     tools: 'Claude Code / Python・tkinter',
     title: 'Premiere フォルダテンプレート',
