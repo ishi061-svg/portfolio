@@ -13,7 +13,7 @@ const CATEGORIES = {
 const CAT_TOOLS = {
   ad: 'Photoshop / Illustrator',
   video: 'Premiere Pro / After Effects / Photoshop',
-  app: 'Claude Code / HTML・CSS・JavaScript・C言語',
+  app: 'Claude Code / HTML・CSS・JavaScript・C言語・Python',
 };
 
 const WORKS = [
