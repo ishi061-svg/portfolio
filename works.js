@@ -246,6 +246,23 @@ const WORKS = [
     images: ['app/premiere-folder-template.png'],
   },
   {
+    id: 'ytmusic-tag-writer', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ytmusicapi・mutagen',
+    title: 'YouTube Music タグ書き込み',
+    desc: 'YouTube Music のアルバムページの URL を貼るだけで、MP3 にアルバム名・アーティスト・トラック番号・ジャケットをまとめて書き込むアプリです。',
+    points: [
+      '曲名が近いもの同士を自動で組み合わせる。日本語と英語、どちらの曲名でも照合できる',
+      '曲名で見つからない曲は並び順で当てはめ、一覧で色を変えて知らせる',
+      '書き込む前に「今 → 新」を一覧で確認でき、ダブルクリックで対応する曲を選び直せる',
+      'ジャケットは 1200×1200 で取得。すでに入っている画像を置き換えるかはチェックで選べる',
+      '書き込む前にバックアップを作り、チェックの状態も覚えている',
+      'ドラッグ＆ドロップでフォルダや URL を入れられる',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/ytmusic-tag-writer', label: 'GitHubで見る' },
+    images: ['app/ytmusic-tag-writer.png'],
+  },
+  {
     id: 'premiere-plugins', cat: 'app',
     title: 'Premiereプラグイン',
     desc: 'エフェクトを一覧からワンボタンで適用するプラグイン（エフェクトパレット）と、無音部分だけカットするプラグイン（無音カットツール）です。',
