@@ -93,6 +93,48 @@ img { max-width: 100%; }
 .hero .tags { color: rgba(255,255,255,.9); font-weight: 500; font-size: 1rem; letter-spacing: .04em; margin-top: 6px; }
 .hero .sep { color: #f2b77a; margin: 0 .55em; font-weight: 700; }
 
+/* ヘッダーの見せ方（2026-11 改）
+   ・左揃え：下の見出しや作品一覧と、左の線をそろえる
+   ・背景に作品のサムネイルをうっすら敷き、何を作る人かを一目で伝える
+   ・名前と肩書きを順番に表示する（動きを減らす設定の人には動かさない） */
+.hero { text-align: left; padding: 64px 16px 52px; }
+.hero-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+.hero-bg { position: absolute; inset: 0; overflow: hidden; }
+.hero-bg-grid {
+  position: absolute; inset: -20px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;
+  transform: rotate(-6deg) scale(1.15);
+  opacity: .28;
+}
+.hero-bg-grid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 3px; display: block; }
+.hero-bg::after {                      /* 紺を重ねて、文字を読みやすくする */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(rgba(62,79,106,.55), rgba(62,79,106,.85));
+}
+.hero .eyebrow { display: flex; align-items: center; gap: 12px; }
+.hero .eyebrow::after { content: ""; width: 48px; height: 2px; background: #f2b77a; } /* 「/」と同じ色 */
+.hero h1 { font-size: clamp(2.8rem, 9vw, 5rem); letter-spacing: .14em; line-height: 1.1; }
+.hero .en { margin: 6px 0 0; font-size: .95rem; font-weight: 700; letter-spacing: .45em; color: #f2b77a; }
+.hero .role { margin-top: 26px; font-size: 1.1rem; }
+.hero .role .sep { margin: 0 .7em; }
+.hero::after { left: max(40px, calc((100% - 1100px) / 2 + 40px)); transform: none; } /* 吹き出しの三角も左側へ */
+
+.hero .eyebrow, .hero h1, .hero .en, .hero .role > * {
+  opacity: 0; animation: heroIn .7s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.hero .role > * { display: inline-block; }
+.hero h1 { animation-delay: .2s; }
+.hero .en { animation-delay: .35s; }
+.hero .role > *:nth-child(1) { animation-delay: .5s; }
+.hero .role > *:nth-child(2) { animation-delay: .6s; }
+.hero .role > *:nth-child(3) { animation-delay: .7s; }
+.hero .role > *:nth-child(4) { animation-delay: .8s; }
+.hero .role > *:nth-child(5) { animation-delay: .9s; }
+@keyframes heroIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow, .hero h1, .hero .en, .hero .role > * { animation: none; opacity: 1; }
+}
+
 /* ---------- ボタン（タブ・作品ページのボタン） ---------- */
 .tab,
 .cta {
@@ -250,6 +292,29 @@ main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
 .section-head .count {
   order: 2;
   font-size: .8rem; font-weight: 500; color: var(--sub); letter-spacing: 0;
+}
+
+/* ---------- プロフィール（作品一覧の下） ---------- */
+.profile-list {
+  display: grid; grid-template-columns: 8em 1fr; gap: 14px 20px;
+  margin: 0; padding: 24px;
+  background: var(--surface); border: var(--btn-line); border-radius: var(--radius);
+  box-shadow: var(--btn-shadow);
+}
+.profile-list dt { color: var(--sub); font-size: .9rem; font-weight: 700; }
+.profile-list dd { margin: 0; }
+.profile-list ul { margin: 0; padding-left: 1.2em; }
+.profile-list .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.profile-list .chips span {
+  padding: 1px 12px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--bg);
+  font-size: .85rem; font-weight: 700;
+}
+.profile-list .cta { padding: 6px 20px; font-size: .9rem; }
+@media (max-width: 560px) {
+  .profile-list { grid-template-columns: 1fr; gap: 2px; padding: 18px; }
+  .profile-list dd { margin-bottom: 12px; }
 }
 
 footer { text-align: center; color: var(--sub); font-size: .85rem; padding: 0 16px 32px; }

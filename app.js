@@ -11,6 +11,12 @@ function mediaTag(w) {
 }
 
 function renderList() {
+  // ヘッダーの背景に、作品のサムネイルを2周分並べる
+  const bg = document.getElementById('hero-bg');
+  if (bg) {
+    const imgs = WORKS.map(w => IMG_BASE + w.images[0]);
+    bg.innerHTML = imgs.concat(imgs).map(s => `<img src="${s}" alt="">`).join('');
+  }
   const root = document.getElementById('grid');
   // ジャンルごとに「見出し＋仕切り線＋カードの並び」を作る
   root.innerHTML = Object.entries(CATEGORIES).map(([cat, name]) => {
