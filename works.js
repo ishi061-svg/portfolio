@@ -1,8 +1,10 @@
 // 作品データ（ここを書き換えると、一覧と作品ページの両方が変わります）
-// cat: ad=広告 / video=動画編集 / app=アプリ・ツール
+// cat: web=Webサイト / ad=広告 / video=動画編集 / app=アプリ・ツール
 // images: 1枚目が一覧のサムネイル。2枚目以降は作品ページに並びます
+// goal: 作品ページの「目的」／ result: 作品ページの「結果」（書いた作品だけに出ます）
 // ここに書いた順番で、一覧ページに上から並びます
 const CATEGORIES = {
+  web: 'Webサイト',
   video: '動画編集',
   app: 'アプリ・ツール',
   ad: '広告',
@@ -11,12 +13,32 @@ const CATEGORIES = {
 // ジャンルごとに使ったソフト（一覧の見出しの下と、作品ページに出ます）
 // 作品ごとに違うときは、その作品に tools: '...' を書くと、そちらが優先されます
 const CAT_TOOLS = {
+  web: 'Claude Code / HTML・CSS・JavaScript / GitHub Pages',
   ad: 'Photoshop / Illustrator',
   video: 'Premiere Pro / After Effects / Photoshop',
   app: 'Claude Code / HTML・CSS・JavaScript・C言語・Python',
 };
 
 const WORKS = [
+  // ===== Webサイト =====
+  {
+    id: 'portfolio-site', cat: 'web',
+    title: 'Webサイト / このポートフォリオサイト',
+    desc: 'いま見ている、この作品集サイトです。デザインを考え、AI（Claude Code）と一緒に作り、GitHub Pagesで公開しています。',
+    goal: 'Web制作会社のデザイナーに、動画・デザイン・アプリの作品を迷わず見比べてもらうため',
+    points: [
+      'AIに案をいくつか出してもらい、並べて比べてから自分で選んで決定',
+      'ヘッダーも左揃えにして、見出し・作品一覧・プロフィールと左の線をそろえた',
+      'ヘッダーの背景に作品をうっすら並べ、何を作る人かが開いてすぐ伝わるように',
+      '差し色は薄いオレンジ1色にまとめ、紺の中で目を引くポイントに',
+      'スマホではタブを1列にして横にスクロール、プロフィールは縦1列に',
+      '動きはヘッダーと押せる場所だけ。動きを減らす設定の人には動かさない',
+      '作品はデータ1か所にまとめ、足すと一覧・作品ページ・背景に自動で反映',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/portfolio', label: 'GitHubでコードを見る' },
+    images: ['web/portfolio-site-v4.png'], // パソコン＋スマホの画面を並べた版・スマホ枠を細く・インカメラ入り（前の版は portfolio-site.png / -v2 / -v3）
+  },
+
   // ===== 広告 =====
   {
     id: 'seminar-banner', cat: 'ad',
@@ -161,7 +183,7 @@ const WORKS = [
     id: 'gamelib', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'Webページ / ゲームライブラリ',
-    desc: 'Claude Codeで作成した、持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
+    desc: '持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
     link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
     images: ['app/gamelib.png'],
   },
