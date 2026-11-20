@@ -182,6 +182,22 @@ const WORKS = [
     images: ['app/telop-tool-v2.png'], // 背景色・アプリ名入り（元の版は telop-tool.png）
   },
   {
+    id: 'daihon-viewer', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
+    title: '台本表示ツール',
+    desc: '台本を貼り付けるだけで、タブレットにセリフを1ページずつ大きく表示するWebツールです。収録や撮影のとき、離れた場所からでも台本が読めるように作りました。',
+    points: [
+      'セリフごとに、画面の端まで入るいちばん大きな文字へ自動で調整',
+      '「名前：セリフ」で人ごとに色分けし、名前には座布団を敷いて見やすく',
+      '区切り・（ ）・名前をワンボタンで入力。ページの区切り方も選べる',
+      '文字の太さ・フチ・行間を調整し、確認ウィンドウでその場で確認',
+      'どの機器でも見られるよう、1ページずつ16:9のJPGで保存（ZIPでまとめて）',
+      'タップやスワイプでめくり、Androidでは全画面・横向きに自動で固定',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/daihon-viewer/', label: '使ってみる' }, // GitHubに daihon-viewer を作って公開してから有効になる
+    images: ['app/daihon-viewer.png'],
+  },
+  {
     id: 'audio-track-adder', cat: 'app',
     tools: 'Claude Code / Python・tkinter・ffmpeg',
     title: '音声トラック追加ツール',
