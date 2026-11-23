@@ -83,6 +83,14 @@ const WORKS = [
     images: ['video/cm-aoonisui.png'],
   },
   {
+    id: 'cm-isuzu', cat: 'video',
+    tools: 'Premiere Pro / After Effects', // Photoshop は使っていないので、ジャンル共通の表記より優先
+    title: 'テレビCM / いすゞのトラック',
+    desc: 'いすゞのトラック「ELF mio」のテレビCMです。撮影サポート・カット・エフェクト・整音・カラーコレクションを担当しました。',
+    youtube: { id: 'c_3CcZP-p54' },
+    images: ['video/cm-isuzu.webp'],
+  },
+  {
     id: 'shorts-daywork', cat: 'video',
     tools: 'Premiere Pro / Photoshop', // After Effects は使っていないので、ジャンル共通の表記より優先
     title: 'YouTube / ショート動画',
