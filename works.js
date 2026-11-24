@@ -235,6 +235,23 @@ const WORKS = [
     images: ['app/daihon-viewer.png'],
   },
   {
+    id: '3d-model-tool', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript・Three.js / Blender',
+    title: '3Dモデル指示ツール',
+    desc: '人の形の3Dモデル（素体）にポーズを付けて並べ、演者さんや画像生成AIにポーズや構図を伝えるためのWebツールです。画像・ポーズのデータ（JSON）・3Dデータ（glb）で書き出せます。',
+    goal: '演者さんや画像生成AIに、ポーズや構図を正確に伝えるため',
+    points: [
+      '1〜3人を男性（青）・女性（赤）で出し、9種類のポーズから選んで調整',
+      '関節のつまみをドラッグ、または「前後・ひねり・横」のスライダーで曲げる',
+      '手の形は、開く・握る・指さし・ピース・グッド・OK の6種類',
+      '椅子・テーブル・丸テーブルを置いて、座る場面も作れる',
+      '16:9・9:16・1:1 の画像、ポーズの JSON、骨入りの glb で保存',
+      '素体は利用規約を確かめ、Blender で骨の結び付けなどの加工をして使用',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/3d-model-tool/', label: '使ってみる' }, // GitHubに 3d-model-tool を作って公開してから有効になる
+    images: ['app/3d-model-tool.png'],
+  },
+  {
     id: 'audio-track-adder', cat: 'app',
     tools: 'Claude Code / Python・tkinter・ffmpeg',
     title: '音声トラック追加ツール',
