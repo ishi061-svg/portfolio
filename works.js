@@ -321,7 +321,7 @@ const WORKS = [
       'ダブルクリックで使える exe にして、GitHub で公開',
     ],
     link: { url: 'https://github.com/ishi061-svg/premiere-folder-template', label: 'GitHubで見る' },
-    images: ['app/premiere-folder-template.png'],
+    images: ['app/premiere-folder-template-v2.png'],
   },
   {
     id: 'ytmusic-tag-writer', cat: 'app',
@@ -340,6 +340,25 @@ const WORKS = [
     ],
     link: { url: 'https://github.com/ishi061-svg/ytmusic-tag-writer', label: 'GitHubで見る' },
     images: ['app/ytmusic-tag-writer.png'],
+  },
+  {
+    id: 'hayamiru', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・Pillow・ffmpeg',
+    title: 'ハヤミル（動画一覧アプリ）',
+    desc: '登録したフォルダの動画を一覧にして、すぐ並べ替え・検索・再生できるアプリです。動画が何千本あっても軽く動くことを一番の目標にしました。',
+    goal: 'エクスプローラーで動画の多いフォルダを並べ替えると時間がかかり、見たい動画をすぐ探せなかったため',
+    result: '自分の動画の整理に実際に使用している。使いながら出た「遅い」「手間」という声を、毎回時間を測って直した',
+    points: [
+      '試験用の5,000本で、読み込み0.08秒・並べ替え0.1秒前後',
+      '打つたびに絞り込む検索。ファイル名を右クリックするか、なぞるだけでも検索できる',
+      'よく使う言葉を「ジャンル・シリーズ」などに分けてボタンにし、1回押すだけで検索',
+      'ファイル名によく出る言葉を数えて並べ、ボタン1回で分類。待ち時間を約5秒から約0.1秒に改善',
+      '長さとサムネイルは裏で少しずつ作り、見えている分だけを描くので、何千本でも重くならない',
+      'タグ・星・ワンクリック再生。見た目は速さを測りながら整えた',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/hayamiru', label: 'GitHubで見る' }, // GitHubに hayamiru を作って公開してから有効になる
+    images: ['app/hayamiru.png'],
   },
   {
     id: 'premiere-plugins', cat: 'app',
