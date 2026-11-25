@@ -140,23 +140,6 @@ const WORKS = [
 
   // ===== アプリ・ツール =====
   {
-    id: 'lightsout-c', cat: 'app',
-    title: 'ゲームアプリ / ライツアウト（C言語版）',
-    desc: 'JavaScriptで作ったライツアウトを、C言語で作り直したコンソール版です。組み込みの仕事を目指して、盤面をビット演算で管理し、最短の答えを表示するヒント機能と自動テストも作りました。',
-    goal: 'C言語を覚えるため。C言語・C++を使う組み込みの仕事を目指し、同じゲームを2つの言語で作って、違いを説明できるようにした',
-    tools: 'Claude Code / C言語・GCC',
-    points: [
-      'JavaScript版を、組み込みの仕事を目指してC言語で作り直し',
-      '25マスの盤面を数字1つで管理し、押す処理を計算1回に（ビット演算）',
-      '「h」で、今の盤面から最短で消せる押し方を表示',
-      '5689個の確認を約1秒で行う自動テストを作成',
-      'おかしな入力でも止まらず、理由を出して聞き直す作り',
-      '仕様書とREADMEを書き、GitHubで公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/lights-out-c', label: 'GitHubで見る' },
-    images: ['app/lightsout-c.png'],
-  },
-  {
     id: 'lightsout', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'ゲームアプリ / パズル「ライツアウト」',
@@ -173,6 +156,23 @@ const WORKS = [
     ],
     link: { url: 'https://ishi061-svg.github.io/lights-out/', label: '遊んでみる' },
     images: ['app/lightsout-v2.png'], // 背景色・アプリ名入り（元の版は lightsout.png）
+  },
+  {
+    id: 'lightsout-c', cat: 'app',
+    title: 'ゲームアプリ / ライツアウト（C言語版）',
+    desc: 'JavaScriptで作ったライツアウトを、C言語で作り直したコンソール版です。組み込みの仕事を目指して、盤面をビット演算で管理し、最短の答えを表示するヒント機能と自動テストも作りました。',
+    goal: 'C言語を覚えるため。C言語・C++を使う組み込みの仕事を目指し、同じゲームを2つの言語で作って、違いを説明できるようにした',
+    tools: 'Claude Code / C言語・GCC',
+    points: [
+      'JavaScript版を、組み込みの仕事を目指してC言語で作り直し',
+      '25マスの盤面を数字1つで管理し、押す処理を計算1回に（ビット演算）',
+      '「h」で、今の盤面から最短で消せる押し方を表示',
+      '5689個の確認を約1秒で行う自動テストを作成',
+      'おかしな入力でも止まらず、理由を出して聞き直す作り',
+      '仕様書とREADMEを書き、GitHubで公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/lights-out-c', label: 'GitHubで見る' },
+    images: ['app/lightsout-c.png'],
   },
   {
     id: 'kaimono-memo', cat: 'app',
