@@ -140,6 +140,23 @@ const WORKS = [
 
   // ===== アプリ・ツール =====
   {
+    id: 'lightsout-c', cat: 'app',
+    title: 'ゲームアプリ / ライツアウト（C言語版）',
+    desc: 'JavaScriptで作ったライツアウトを、C言語で作り直したコンソール版です。組み込みの仕事を目指して、盤面をビット演算で管理し、最短の答えを表示するヒント機能と自動テストも作りました。',
+    goal: 'C言語を覚えるため。C言語・C++を使う組み込みの仕事を目指し、同じゲームを2つの言語で作って、違いを説明できるようにした',
+    tools: 'Claude Code / C言語・GCC',
+    points: [
+      'JavaScript版を、組み込みの仕事を目指してC言語で作り直し',
+      '25マスの盤面を数字1つで管理し、押す処理を計算1回に（ビット演算）',
+      '「h」で、今の盤面から最短で消せる押し方を表示',
+      '5689個の確認を約1秒で行う自動テストを作成',
+      'おかしな入力でも止まらず、理由を出して聞き直す作り',
+      '仕様書とREADMEを書き、GitHubで公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/lights-out-c', label: 'GitHubで見る' },
+    images: ['app/lightsout-c.png'],
+  },
+  {
     id: 'lightsout', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'ゲームアプリ / パズル「ライツアウト」',
@@ -156,23 +173,6 @@ const WORKS = [
     ],
     link: { url: 'https://ishi061-svg.github.io/lights-out/', label: '遊んでみる' },
     images: ['app/lightsout-v2.png'], // 背景色・アプリ名入り（元の版は lightsout.png）
-  },
-  {
-    id: 'lightsout-c', cat: 'app',
-    title: 'ゲームアプリ / ライツアウト（C言語版）',
-    desc: 'JavaScriptで作ったライツアウトを、C言語で作り直したコンソール版です。組み込みの仕事を目指して、盤面をビット演算で管理し、最短の答えを表示するヒント機能と自動テストも作りました。',
-    goal: 'C言語を覚えるため。C言語・C++を使う組み込みの仕事を目指し、同じゲームを2つの言語で作って、違いを説明できるようにした',
-    tools: 'Claude Code / C言語・GCC',
-    points: [
-      'JavaScript版を、組み込みの仕事を目指してC言語で作り直し',
-      '25マスの盤面を数字1つで管理し、押す処理を計算1回に（ビット演算）',
-      '「h」で、今の盤面から最短で消せる押し方を表示',
-      '5689個の確認を約1秒で行う自動テストを作成',
-      'おかしな入力でも止まらず、理由を出して聞き直す作り',
-      '仕様書とREADMEを書き、GitHubで公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/lights-out-c', label: 'GitHubで見る' },
-    images: ['app/lightsout-c.png'],
   },
   {
     id: 'kaimono-memo', cat: 'app',
@@ -193,12 +193,107 @@ const WORKS = [
     images: ['app/kaimono-memo-v2.png'], // 背景色・アプリ名入り（元の版は kaimono-memo.png）
   },
   {
+    id: 'ytmusic-tag-writer', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ytmusicapi・mutagen',
+    title: 'YouTube Music タグ書き込み',
+    desc: 'YouTube Music のアルバムページの URL を貼るだけで、MP3 に曲名・アルバム名・アーティスト・トラック番号・ジャケットをまとめて書き込むアプリです。',
+    points: [
+      '曲名が近いもの同士を自動で組み合わせる。日本語と英語、どちらの曲名でも照合できる',
+      '曲名で見つからない曲は並び順で当てはめ、一覧で色を変えて知らせる',
+      '書き込む前に「今 → 新」を一覧で確認でき、ダブルクリックで対応する曲を選び直せる',
+      'ジャケットは 1200×1200 で取得。すでに入っている画像を置き換えるかはチェックで選べる',
+      'ローマ字の曲名を、YouTube Music の日本語の曲名に書き換えることもできる',
+      '書き込む前にバックアップを作り、チェックの状態も覚えている',
+      'ドラッグ＆ドロップでフォルダや URL を入れられる',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/ytmusic-tag-writer', label: 'GitHubで見る' },
+    images: ['app/ytmusic-tag-writer.png'],
+  },
+  {
+    id: '3d-model-tool', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript・Three.js / Blender',
+    title: '3Dモデル指示ツール',
+    desc: '人の形の3Dモデル（素体）にポーズを付けて並べ、演者さんや画像生成AIにポーズや構図を伝えるためのWebツールです。画像・ポーズのデータ（JSON）・3Dデータ（glb）で書き出せます。',
+    goal: '演者さんや画像生成AIに、ポーズや構図を正確に伝えるため',
+    points: [
+      '1〜3人を男性（青）・女性（赤）で出し、9種類のポーズから選んで調整',
+      '関節のつまみをドラッグ、または「前後・ひねり・横」のスライダーで曲げる',
+      '手の形は、開く・握る・指さし・ピース・グッド・OK の6種類',
+      '椅子・テーブル・丸テーブルを置いて、座る場面も作れる',
+      '16:9・9:16・1:1 の画像、ポーズの JSON、骨入りの glb で保存',
+      '素体は利用規約を確かめ、Blender で骨の結び付けなどの加工をして使用',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/3d-model-tool/', label: '使ってみる' }, // GitHubに 3d-model-tool を作って公開してから有効になる
+    images: ['app/3d-model-tool.png'],
+  },
+  {
+    id: 'daihon-viewer', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
+    title: '台本表示ツール',
+    desc: '台本を貼り付けるだけで、タブレットにセリフを1ページずつ大きく表示するWebツールです。収録や撮影のとき、離れた場所からでも台本が読めるように作りました。',
+    points: [
+      'セリフごとに、画面の端まで入るいちばん大きな文字へ自動で調整',
+      '「名前：セリフ」で人ごとに色分けし、名前には座布団を敷いて見やすく',
+      '区切り・（ ）・名前をワンボタンで入力。ページの区切り方も選べる',
+      '文字の太さ・フチ・行間を調整し、確認ウィンドウでその場で確認',
+      'どの機器でも見られるよう、1ページずつ16:9のJPGで保存（ZIPでまとめて）',
+      'タップやスワイプでめくり、Androidでは全画面・横向きに自動で固定',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/daihon-viewer/', label: '使ってみる' }, // GitHubに daihon-viewer を作って公開してから有効になる
+    images: ['app/daihon-viewer.png'],
+  },
+  {
+    id: 'hayamiru', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・Pillow・ffmpeg',
+    title: 'ハヤミル（動画一覧アプリ）',
+    desc: '登録したフォルダの動画を一覧にして、すぐ並べ替え・検索・再生できるアプリです。動画が何千本あっても軽く動くことを一番の目標にしました。',
+    goal: 'エクスプローラーで動画の多いフォルダを並べ替えると時間がかかり、見たい動画をすぐ探せなかったため',
+    result: '自分の動画の整理に実際に使用している。使いながら出た「遅い」「手間」という声を、毎回時間を測って直した',
+    points: [
+      '試験用の5,000本で、読み込み0.08秒・並べ替え0.1秒前後',
+      '打つたびに絞り込む検索。ファイル名を右クリックするか、なぞるだけでも検索できる',
+      'よく使う言葉を「ジャンル・シリーズ」などに分けてボタンにし、1回押すだけで検索',
+      'ファイル名によく出る言葉を数えて並べ、ボタン1回で分類。待ち時間を約5秒から約0.1秒に改善',
+      '長さとサムネイルは裏で少しずつ作り、見えている分だけを描くので、何千本でも重くならない',
+      'タグ・星・ワンクリック再生。見た目は速さを測りながら整えた',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/hayamiru', label: 'GitHubで見る' }, // GitHubに hayamiru を作って公開してから有効になる
+    images: ['app/hayamiru.png'],
+  },
+  {
     id: 'gamelib', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'Webページ / ゲームライブラリ',
     desc: '持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
     link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
     images: ['app/gamelib.png'],
+  },
+  {
+    id: 'premiere-plugins', cat: 'app',
+    title: 'Premiereプラグイン',
+    desc: 'エフェクトを一覧からワンボタンで適用するプラグイン（エフェクトパレット）と、無音部分だけカットするプラグイン（無音カットツール）です。',
+    tools: 'Claude Code / HTML・CSS・JavaScript・ExtendScript・PowerShell・Python', // 2つのプラグインの中身で確認（PowerShell＝エフェクトパレット、Python＝無音カット）
+    images: ['app/premiere-plugins-v2.png'], // 背景色・名前入り（元の版は premiere-plugins.png）
+  },
+  {
+    id: 'premiere-folder-template', cat: 'app',
+    tools: 'Claude Code / Python・tkinter',
+    title: 'Premiere フォルダテンプレート',
+    desc: '動画編集を始めるときのフォルダを、ボタン1つでまとめて作るツールです。作品名と日付を入れると「作品名_2026-11-15」のフォルダができ、Premiere に入れるとそのままの形でビンになります。',
+    goal: '動画編集の作業をスマートに進められるよう、フォルダをきれいにそろえるため',
+    result: 'フォルダを手で作らなくてよくなり、いつも同じ形にそろうようになった。作業効率が上がった',
+    points: [
+      '素材・音声・画像・書き出しなど22個のフォルダを、ボタン1つで作成',
+      'いらないフォルダはチェックで OFF。親を外すと中も作らない',
+      'フォルダの形はメモ帳で書き換えられ、書き間違いは行番号で表示',
+      '前回の場所とチェックを覚えていて、日付は今日が自動で入る',
+      'Premiere に入れると、空のフォルダもそのままビンになることを確認',
+      'ダブルクリックで使える exe にして、GitHub で公開',
+    ],
+    link: { url: 'https://github.com/ishi061-svg/premiere-folder-template', label: 'GitHubで見る' },
+    images: ['app/premiere-folder-template-v2.png'],
   },
   {
     id: 'telop-tool', cat: 'app',
@@ -219,37 +314,22 @@ const WORKS = [
     images: ['app/telop-tool-v2.png'], // 背景色・アプリ名入り（元の版は telop-tool.png）
   },
   {
-    id: 'daihon-viewer', cat: 'app',
-    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
-    title: '台本表示ツール',
-    desc: '台本を貼り付けるだけで、タブレットにセリフを1ページずつ大きく表示するWebツールです。収録や撮影のとき、離れた場所からでも台本が読めるように作りました。',
+    id: 'mp4-thumbnail-changer', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・ffmpeg',
+    title: 'MP4サムネイル変更',
+    desc: 'エクスプローラーで見える MP4 のサムネイルを、好きな画像や、動画の中の好きな場面に変えるアプリです。何本かまとめて処理できます。',
+    goal: 'MP4のサムネイルをDVDのジャケットやタイトル画面にして、見た目をそろえるため',
+    result: '実際に使用した。使ってもらったところ「動画の場面から選ぶ」機能に気づきにくいと分かり、タブにして2つの使い方がいつも見えるように直した',
     points: [
-      'セリフごとに、画面の端まで入るいちばん大きな文字へ自動で調整',
-      '「名前：セリフ」で人ごとに色分けし、名前には座布団を敷いて見やすく',
-      '区切り・（ ）・名前をワンボタンで入力。ページの区切り方も選べる',
-      '文字の太さ・フチ・行間を調整し、確認ウィンドウでその場で確認',
-      'どの機器でも見られるよう、1ページずつ16:9のJPGで保存（ZIPでまとめて）',
-      'タップやスワイプでめくり、Androidでは全画面・横向きに自動で固定',
+      '動画は作り直さずに表紙の絵だけを足すので、画質が落ちず一瞬で終わる',
+      'サムネイルは、画像ファイルか動画の好きな場面から、タブで選べる',
+      '場面はスライダーで見ながら、または時間を入れて選べる',
+      '元の動画を残すか上書きするかを毎回選べ、失敗しても元は壊れない',
+      'ドラッグ＆ドロップで動画・画像・フォルダを入れて、まとめて処理',
+      'ダブルクリックで使える exe にして、GitHub で公開',
     ],
-    link: { url: 'https://ishi061-svg.github.io/daihon-viewer/', label: '使ってみる' }, // GitHubに daihon-viewer を作って公開してから有効になる
-    images: ['app/daihon-viewer.png'],
-  },
-  {
-    id: '3d-model-tool', cat: 'app',
-    tools: 'Claude Code / HTML・CSS・JavaScript・Three.js / Blender',
-    title: '3Dモデル指示ツール',
-    desc: '人の形の3Dモデル（素体）にポーズを付けて並べ、演者さんや画像生成AIにポーズや構図を伝えるためのWebツールです。画像・ポーズのデータ（JSON）・3Dデータ（glb）で書き出せます。',
-    goal: '演者さんや画像生成AIに、ポーズや構図を正確に伝えるため',
-    points: [
-      '1〜3人を男性（青）・女性（赤）で出し、9種類のポーズから選んで調整',
-      '関節のつまみをドラッグ、または「前後・ひねり・横」のスライダーで曲げる',
-      '手の形は、開く・握る・指さし・ピース・グッド・OK の6種類',
-      '椅子・テーブル・丸テーブルを置いて、座る場面も作れる',
-      '16:9・9:16・1:1 の画像、ポーズの JSON、骨入りの glb で保存',
-      '素体は利用規約を確かめ、Blender で骨の結び付けなどの加工をして使用',
-    ],
-    link: { url: 'https://ishi061-svg.github.io/3d-model-tool/', label: '使ってみる' }, // GitHubに 3d-model-tool を作って公開してから有効になる
-    images: ['app/3d-model-tool.png'],
+    link: { url: 'https://github.com/ishi061-svg/mp4-thumbnail-changer', label: 'GitHubで見る' },
+    images: ['app/mp4-thumbnail-changer.png'],
   },
   {
     id: 'audio-track-adder', cat: 'app',
@@ -287,85 +367,5 @@ const WORKS = [
     ],
     link: { url: 'https://github.com/ishi061-svg/se-head-trimmer', label: 'GitHubで見る' },
     images: ['app/se-head-trimmer.png'],
-  },
-  {
-    id: 'mp4-thumbnail-changer', cat: 'app',
-    tools: 'Claude Code / Python・tkinter・ffmpeg',
-    title: 'MP4サムネイル変更',
-    desc: 'エクスプローラーで見える MP4 のサムネイルを、好きな画像や、動画の中の好きな場面に変えるアプリです。何本かまとめて処理できます。',
-    goal: 'MP4のサムネイルをDVDのジャケットやタイトル画面にして、見た目をそろえるため',
-    result: '実際に使用した。使ってもらったところ「動画の場面から選ぶ」機能に気づきにくいと分かり、タブにして2つの使い方がいつも見えるように直した',
-    points: [
-      '動画は作り直さずに表紙の絵だけを足すので、画質が落ちず一瞬で終わる',
-      'サムネイルは、画像ファイルか動画の好きな場面から、タブで選べる',
-      '場面はスライダーで見ながら、または時間を入れて選べる',
-      '元の動画を残すか上書きするかを毎回選べ、失敗しても元は壊れない',
-      'ドラッグ＆ドロップで動画・画像・フォルダを入れて、まとめて処理',
-      'ダブルクリックで使える exe にして、GitHub で公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/mp4-thumbnail-changer', label: 'GitHubで見る' },
-    images: ['app/mp4-thumbnail-changer.png'],
-  },
-  {
-    id: 'premiere-folder-template', cat: 'app',
-    tools: 'Claude Code / Python・tkinter',
-    title: 'Premiere フォルダテンプレート',
-    desc: '動画編集を始めるときのフォルダを、ボタン1つでまとめて作るツールです。作品名と日付を入れると「作品名_2026-11-15」のフォルダができ、Premiere に入れるとそのままの形でビンになります。',
-    goal: '動画編集の作業をスマートに進められるよう、フォルダをきれいにそろえるため',
-    result: 'フォルダを手で作らなくてよくなり、いつも同じ形にそろうようになった。作業効率が上がった',
-    points: [
-      '素材・音声・画像・書き出しなど22個のフォルダを、ボタン1つで作成',
-      'いらないフォルダはチェックで OFF。親を外すと中も作らない',
-      'フォルダの形はメモ帳で書き換えられ、書き間違いは行番号で表示',
-      '前回の場所とチェックを覚えていて、日付は今日が自動で入る',
-      'Premiere に入れると、空のフォルダもそのままビンになることを確認',
-      'ダブルクリックで使える exe にして、GitHub で公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/premiere-folder-template', label: 'GitHubで見る' },
-    images: ['app/premiere-folder-template-v2.png'],
-  },
-  {
-    id: 'ytmusic-tag-writer', cat: 'app',
-    tools: 'Claude Code / Python・tkinter・ytmusicapi・mutagen',
-    title: 'YouTube Music タグ書き込み',
-    desc: 'YouTube Music のアルバムページの URL を貼るだけで、MP3 に曲名・アルバム名・アーティスト・トラック番号・ジャケットをまとめて書き込むアプリです。',
-    points: [
-      '曲名が近いもの同士を自動で組み合わせる。日本語と英語、どちらの曲名でも照合できる',
-      '曲名で見つからない曲は並び順で当てはめ、一覧で色を変えて知らせる',
-      '書き込む前に「今 → 新」を一覧で確認でき、ダブルクリックで対応する曲を選び直せる',
-      'ジャケットは 1200×1200 で取得。すでに入っている画像を置き換えるかはチェックで選べる',
-      'ローマ字の曲名を、YouTube Music の日本語の曲名に書き換えることもできる',
-      '書き込む前にバックアップを作り、チェックの状態も覚えている',
-      'ドラッグ＆ドロップでフォルダや URL を入れられる',
-      'ダブルクリックで使える exe にして、GitHub で公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/ytmusic-tag-writer', label: 'GitHubで見る' },
-    images: ['app/ytmusic-tag-writer.png'],
-  },
-  {
-    id: 'hayamiru', cat: 'app',
-    tools: 'Claude Code / Python・tkinter・Pillow・ffmpeg',
-    title: 'ハヤミル（動画一覧アプリ）',
-    desc: '登録したフォルダの動画を一覧にして、すぐ並べ替え・検索・再生できるアプリです。動画が何千本あっても軽く動くことを一番の目標にしました。',
-    goal: 'エクスプローラーで動画の多いフォルダを並べ替えると時間がかかり、見たい動画をすぐ探せなかったため',
-    result: '自分の動画の整理に実際に使用している。使いながら出た「遅い」「手間」という声を、毎回時間を測って直した',
-    points: [
-      '試験用の5,000本で、読み込み0.08秒・並べ替え0.1秒前後',
-      '打つたびに絞り込む検索。ファイル名を右クリックするか、なぞるだけでも検索できる',
-      'よく使う言葉を「ジャンル・シリーズ」などに分けてボタンにし、1回押すだけで検索',
-      'ファイル名によく出る言葉を数えて並べ、ボタン1回で分類。待ち時間を約5秒から約0.1秒に改善',
-      '長さとサムネイルは裏で少しずつ作り、見えている分だけを描くので、何千本でも重くならない',
-      'タグ・星・ワンクリック再生。見た目は速さを測りながら整えた',
-      'ダブルクリックで使える exe にして、GitHub で公開',
-    ],
-    link: { url: 'https://github.com/ishi061-svg/hayamiru', label: 'GitHubで見る' }, // GitHubに hayamiru を作って公開してから有効になる
-    images: ['app/hayamiru.png'],
-  },
-  {
-    id: 'premiere-plugins', cat: 'app',
-    title: 'Premiereプラグイン',
-    desc: 'エフェクトを一覧からワンボタンで適用するプラグイン（エフェクトパレット）と、無音部分だけカットするプラグイン（無音カットツール）です。',
-    tools: 'Claude Code / HTML・CSS・JavaScript・ExtendScript・PowerShell・Python', // 2つのプラグインの中身で確認（PowerShell＝エフェクトパレット、Python＝無音カット）
-    images: ['app/premiere-plugins-v2.png'], // 背景色・名前入り（元の版は premiere-plugins.png）
   },
 ];
