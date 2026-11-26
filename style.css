@@ -201,12 +201,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
   /* 白っぽい画像でも背景に埋もれないよう、細い枠線とうっすら影 */
   box-shadow: 0 0 0 1px #cfccc4, 0 4px 14px rgba(0, 0, 0, .14);
 }
-.thumb img {
+.thumb img, .thumb video {
   width: 100%; height: 100%;
   object-fit: contain; display: block;
   transition: transform .4s;
 }
-.card:hover .thumb img { transform: scale(1.04); }
+.card:hover .thumb img, .card:hover .thumb video { transform: scale(1.04); }
 /* 画像の右下の小さい印（▶ 動画 ／ デザイン 3点） */
 .thumb { position: relative; }
 .media-tag {
@@ -339,7 +339,7 @@ footer { text-align: center; color: var(--sub); font-size: .85rem; padding: 0 16
   border-radius: var(--radius);
   overflow: hidden;
 }
-.hero-img img { display: block; width: 100%; max-height: 75vh; object-fit: contain; margin: 0 auto; }
+.hero-img img, .hero-img video { display: block; width: 100%; max-height: 75vh; object-fit: contain; margin: 0 auto; }
 /* 作品ページの動画（横長16:9の枠いっぱいに表示） */
 .video {
   aspect-ratio: 16 / 9;

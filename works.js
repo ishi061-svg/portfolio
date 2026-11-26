@@ -135,7 +135,8 @@ const WORKS = [
     title: 'YouTube / AI出力動画（Fable 5.2）',
     desc: 'AI（Fable 5.2）で出力した、動画編集者のAI活用を紹介する解説動画です。',
     youtube: { id: 'FYzqt8YA9g8' },
-    images: ['video/ai-katsuyou.png'],
+    images: ['video/ai-katsuyou.png'], // 動画を読みこむまでの絵・ヘッダー背景に使う
+    loop: 'video/ai-katsuyou-loop.mp4', // 掲載画像の代わりに動かす（タイムラインの場面だけ・60fps・音なし）
   },
 
   // ===== アプリ・ツール =====

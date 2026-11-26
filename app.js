@@ -10,6 +10,16 @@ function mediaTag(w) {
   return '';
 }
 
+// 掲載画像：loop（音なしでくり返す短い動画）があれば動画、なければ画像を出す
+// 動画のあいだも images[0] を「読みこみ中の絵」に使う
+function mediaEl(w, extra = '') {
+  if (w.loop) {
+    extra = extra.replace('loading="lazy"', ''); // 動画に付けると読みこまれず止まったままになるので外す
+    return `<video src="${IMG_BASE + w.loop}" poster="${IMG_BASE + w.images[0]}" muted autoplay loop playsinline preload="auto" aria-label="${w.title}" ${extra}></video>`;
+  }
+  return `<img src="${IMG_BASE + w.images[0]}" alt="${w.title}" ${extra}>`;
+}
+
 function renderList() {
   // ヘッダーの背景に、作品のサムネイルを2周分並べる
   const bg = document.getElementById('hero-bg');
@@ -28,7 +38,7 @@ function renderList() {
       <p class="section-tools"><span>使用ソフト</span>${CAT_TOOLS[cat]}</p>
       <div class="grid">${items.map(w => `
         <a class="card${w.featured ? ' featured' : ''}" href="${'work.html?id=' + w.id}">
-          <div class="thumb"><img src="${IMG_BASE + w.images[0]}" alt="${w.title}" loading="lazy">${mediaTag(w)}</div>
+          <div class="thumb">${mediaEl(w, 'loading="lazy"')}${mediaTag(w)}</div>
           <div class="body">
             ${w.featured ? '<span class="badge">まずはこちら</span>' : ''}
             <h3>${w.title}</h3>
@@ -92,7 +102,7 @@ function renderWork() {
       <h1>${w.title}</h1>
     </div>
     ${videoBlock(w.youtube)}
-    <figure class="hero-img"><img id="main-img" src="${IMG_BASE + w.images[0]}" alt="${w.title}"></figure>
+    <figure class="hero-img">${mediaEl(w, 'id="main-img"')}</figure>
     ${w.images.length > 1 ? `<div class="gallery">${w.images.map((src, k) =>
       `<button class="${k === 0 ? 'on' : ''}" data-src="${IMG_BASE + src}"><img src="${IMG_BASE + src}" alt=""></button>`).join('')}</div>` : ''}
     <dl class="info">
