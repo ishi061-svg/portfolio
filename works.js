@@ -256,7 +256,7 @@ const WORKS = [
       'スマホで片手でも押しやすいデザイン',
     ],
     link: { url: 'https://ishi061-svg.github.io/shopping-memo/', label: '使ってみる' },
-    images: ['app/kaimono-memo-v2.png'], // 背景色・アプリ名入り（元の版は kaimono-memo.png）
+    images: ['app/kaimono-memo-v4.png'], // タイトルをアプリと同じフォーク Pro H に（太らせた版は v3、前の版は kaimono-memo-v2.png、元の版は kaimono-memo.png）
   },
   {
     id: 'ytmusic-tag-writer', cat: 'app',
