@@ -140,6 +140,71 @@ const WORKS = [
 
   // ===== アプリ・ツール =====
   {
+    id: 'kururin-gif', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript・gifenc',
+    title: 'くるりん GIF',
+    desc: 'スマホで撮った動画の一部分を、再生と逆再生をつないだ「行って戻る」往復ループの GIF にする Web アプリです。スマホのブラウザだけで動き、X・Discord・LINE に貼れる大きさに自動で収めます。',
+    goal: 'パソコン用に作った「GIF ループツール」を、スマホだけでも使えるようにするため',
+    points: [
+      'シークバーと1フレーム送りで範囲を決め、1:1・9:16 などの切り抜き枠を指で調整',
+      '再生スピード・なめらかさ（fps）・横幅と、貼り付け先（X・Discord・LINE）を選ぶだけ',
+      '数枚だけ先に GIF にして大きさを見積もり、上限に入る横幅を最初から選ぶ',
+      '動画を流しながら絵を写して、1枚ずつ取り出すより速く作る',
+      '折り返しで止まって見えないよう、逆再生側の最初と最後の1枚を外す',
+      '動画はスマホの中だけで GIF にし、どこにも送らない',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/kururin-gif/', label: '使ってみる' },
+    images: ['app/kururin-gif.gif'],
+  },
+  {
+    id: 'gif-loop-tool', cat: 'app',
+    tools: 'Claude Code / Python・tkinter・tkinterdnd2・ffmpeg',
+    title: 'GIF ループツール（PC版）',
+    desc: '動画（MP4 など）の一部分を、再生と逆再生をつないだ「行って戻る」往復ループの GIF にする Windows のアプリです。動画を見ながら範囲と切り抜く場所を決め、Discord や X に貼れる大きさに自動で収めます。',
+    points: [
+      'シークバー・1フレーム送り・キーボードで範囲を決め、切り抜き枠はドラッグで調整',
+      '貼り付け先（X・Discord・LINE）を選ぶと、上限に収まるまで横幅 → fps の順に下げて自動で作り直す',
+      '保存する前にプレビューで再生。設定が同じなら、作り直さずにそのまま保存',
+      '進み具合と「あと約○秒」を出し、［やめる］で途中で止められる',
+      'シークバーを動画編集ソフトのように拡大・縮小できる',
+      'スマホ版「くるりん GIF」と同じ見た目・同じ言葉にそろえ、ダブルクリックで使える exe にした',
+    ],
+    images: ['app/gif-loop-tool.gif'],
+  },
+  {
+    id: '3d-model-tool', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript・Three.js / Blender',
+    title: '3Dモデル指示ツール',
+    desc: '人の形の3Dモデル（素体）にポーズを付けて並べ、演者さんや画像生成AIにポーズや構図を伝えるためのWebツールです。画像・ポーズのデータ（JSON）・3Dデータ（glb）で書き出せます。',
+    goal: '演者さんや画像生成AIに、ポーズや構図を正確に伝えるため',
+    points: [
+      '1〜3人を男性（青）・女性（赤）で出し、9種類のポーズから選んで調整',
+      '関節のつまみをドラッグ、または「前後・ひねり・横」のスライダーで曲げる',
+      '手の形は、開く・握る・指さし・ピース・グッド・OK の6種類',
+      '椅子・テーブル・丸テーブルを置いて、座る場面も作れる',
+      '16:9・9:16・1:1 の画像、ポーズの JSON、骨入りの glb で保存',
+      '素体は利用規約を確かめ、Blender で骨の結び付けなどの加工をして使用',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/3d-model-tool/', label: '使ってみる' }, // GitHubに 3d-model-tool を作って公開してから有効になる
+    images: ['app/3d-model-tool.png'],
+  },
+  {
+    id: 'daihon-viewer', cat: 'app',
+    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
+    title: '台本表示ツール',
+    desc: '台本を貼り付けるだけで、タブレットにセリフを1ページずつ大きく表示するWebツールです。収録や撮影のとき、離れた場所からでも台本が読めるように作りました。',
+    points: [
+      'セリフごとに、画面の端まで入るいちばん大きな文字へ自動で調整',
+      '「名前：セリフ」で人ごとに色分けし、名前には座布団を敷いて見やすく',
+      '区切り・（ ）・名前をワンボタンで入力。ページの区切り方も選べる',
+      '文字の太さ・フチ・行間を調整し、確認ウィンドウでその場で確認',
+      'どの機器でも見られるよう、1ページずつ16:9のJPGで保存（ZIPでまとめて）',
+      'タップやスワイプでめくり、Androidでは全画面・横向きに自動で固定',
+    ],
+    link: { url: 'https://ishi061-svg.github.io/daihon-viewer/', label: '使ってみる' }, // GitHubに daihon-viewer を作って公開してから有効になる
+    images: ['app/daihon-viewer.png'],
+  },
+  {
     id: 'lightsout', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
     title: 'ゲームアプリ / パズル「ライツアウト」',
@@ -211,37 +276,12 @@ const WORKS = [
     images: ['app/ytmusic-tag-writer.png'],
   },
   {
-    id: '3d-model-tool', cat: 'app',
-    tools: 'Claude Code / HTML・CSS・JavaScript・Three.js / Blender',
-    title: '3Dモデル指示ツール',
-    desc: '人の形の3Dモデル（素体）にポーズを付けて並べ、演者さんや画像生成AIにポーズや構図を伝えるためのWebツールです。画像・ポーズのデータ（JSON）・3Dデータ（glb）で書き出せます。',
-    goal: '演者さんや画像生成AIに、ポーズや構図を正確に伝えるため',
-    points: [
-      '1〜3人を男性（青）・女性（赤）で出し、9種類のポーズから選んで調整',
-      '関節のつまみをドラッグ、または「前後・ひねり・横」のスライダーで曲げる',
-      '手の形は、開く・握る・指さし・ピース・グッド・OK の6種類',
-      '椅子・テーブル・丸テーブルを置いて、座る場面も作れる',
-      '16:9・9:16・1:1 の画像、ポーズの JSON、骨入りの glb で保存',
-      '素体は利用規約を確かめ、Blender で骨の結び付けなどの加工をして使用',
-    ],
-    link: { url: 'https://ishi061-svg.github.io/3d-model-tool/', label: '使ってみる' }, // GitHubに 3d-model-tool を作って公開してから有効になる
-    images: ['app/3d-model-tool.png'],
-  },
-  {
-    id: 'daihon-viewer', cat: 'app',
+    id: 'gamelib', cat: 'app',
     tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
-    title: '台本表示ツール',
-    desc: '台本を貼り付けるだけで、タブレットにセリフを1ページずつ大きく表示するWebツールです。収録や撮影のとき、離れた場所からでも台本が読めるように作りました。',
-    points: [
-      'セリフごとに、画面の端まで入るいちばん大きな文字へ自動で調整',
-      '「名前：セリフ」で人ごとに色分けし、名前には座布団を敷いて見やすく',
-      '区切り・（ ）・名前をワンボタンで入力。ページの区切り方も選べる',
-      '文字の太さ・フチ・行間を調整し、確認ウィンドウでその場で確認',
-      'どの機器でも見られるよう、1ページずつ16:9のJPGで保存（ZIPでまとめて）',
-      'タップやスワイプでめくり、Androidでは全画面・横向きに自動で固定',
-    ],
-    link: { url: 'https://ishi061-svg.github.io/daihon-viewer/', label: '使ってみる' }, // GitHubに daihon-viewer を作って公開してから有効になる
-    images: ['app/daihon-viewer.png'],
+    title: 'Webページ / ゲームライブラリ',
+    desc: '持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
+    link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
+    images: ['app/gamelib.png'],
   },
   {
     id: 'hayamiru', cat: 'app',
@@ -261,14 +301,6 @@ const WORKS = [
     ],
     link: { url: 'https://github.com/ishi061-svg/hayamiru', label: 'GitHubで見る' }, // GitHubに hayamiru を作って公開してから有効になる
     images: ['app/hayamiru.png'],
-  },
-  {
-    id: 'gamelib', cat: 'app',
-    tools: 'Claude Code / HTML・CSS・JavaScript', // C言語は使っていないので、ジャンル共通の表記より優先
-    title: 'Webページ / ゲームライブラリ',
-    desc: '持っているゲームの一覧ページです。メモアプリ（UPNOTE）のメモから作り、機種ごとのクリア状況やクリア率をひと目で確認できます。タイトル検索もできます。',
-    link: { url: 'https://claude.ai/artifact/WPdBzssejJ6zYyquDQVAzS', label: '見てみる' },
-    images: ['app/gamelib.png'],
   },
   {
     id: 'premiere-plugins', cat: 'app',

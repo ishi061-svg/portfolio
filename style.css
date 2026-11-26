@@ -118,6 +118,7 @@ img { max-width: 100%; }
 .hero .role { margin-top: 26px; font-size: 1.1rem; }
 .hero .role .sep { margin: 0 .7em; }
 .hero::after { left: max(40px, calc((100% - 1100px) / 2 + 40px)); transform: none; } /* 吹き出しの三角も左側へ */
+.hero::after { display: none; } /* 吹き出しの三角は出さない（2026-11-26） */
 
 .hero .eyebrow, .hero h1, .hero .en, .hero .role > * {
   opacity: 0; animation: heroIn .7s cubic-bezier(.2,.7,.2,1) forwards;
