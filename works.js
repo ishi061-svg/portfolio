@@ -169,6 +169,7 @@ const WORKS = [
       'シークバーを動画編集ソフトのように拡大・縮小できる',
       'スマホ版「くるりん GIF」と同じ見た目・同じ言葉にそろえ、ダブルクリックで使える exe にした',
     ],
+    link: { url: 'https://github.com/ishi061-svg/gif-loop-tool', label: 'GitHubで見る' },
     images: ['app/gif-loop-tool.gif'],
   },
   {
